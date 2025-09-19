@@ -1,5 +1,5 @@
 # Pi-License-Plate-Recognizer 🚘
-A Python application for automatic gate control using fast-alpr to recognize car license plates, powered by a Raspberry Pi 5.
+A Python script for automatic gate control using fast-alpr to recognize car license plates in real time, powered by a Raspberry Pi 5.
 
 # Features
 - Recognizes specific car license plates via fast-alpr
