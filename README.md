@@ -21,6 +21,7 @@ Effortlessly deploy your own Telegram Bot to receive real-time notifications eve
 - Commands:
   - /open: Open the gate remotely
   - /status: Receive Raspberry Pi hardware info
+  - /reboot: Automatically reboot the pi
 
 Supports both private and group chats for enhanced convenience and flexibility
 
