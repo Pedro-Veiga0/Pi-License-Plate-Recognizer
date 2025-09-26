@@ -1,5 +1,6 @@
 import cv2
 import psutil
+import os
 from fast_alpr import ALPR
 from gpiozero import LED
 from time import sleep, time
@@ -83,6 +84,11 @@ def open_gate(update, context):
 def status(update, context):
     update.message.reply_text(pi_status())
 
+def reboot_pi(update, context): 
+    update.message.reply_text("🔄 Rebooting Raspberry Pi...")
+    # Give Telegram a chance to send the reply before reboot
+    os.system("sudo reboot now")
+    
 #send message whenever raspberry pi restarts
 timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 send_message(f"🔌 Raspberry Pi restarted at {timestamp}")
@@ -97,6 +103,7 @@ dp = updater.dispatcher
 dp.add_handler(CommandHandler("start", start))
 dp.add_handler(CommandHandler("open", open_gate))
 dp.add_handler(CommandHandler("status", status))
+dp.add_handler(CommandHandler("reboot", reboot_pi))
 
 updater.start_polling()
 
